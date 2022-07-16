@@ -1,0 +1,18 @@
+textarea {
+  resize: none;
+}
+
+.error {
+  color: red;
+  margin-top: 8px;
+}
+
+.dataInput {
+  flex: 0.4;
+  padding-right: 32px;
+}
+
+.rowNumberInput {
+  width: 100%;
+  min-height: 20px;
+}

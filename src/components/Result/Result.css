@@ -1,0 +1,32 @@
+.result {
+  flex: 0.6;
+}
+
+.treemap-contaier {
+  height: 70vh;
+  width: 100%;
+  background-color: white;
+}
+
+.treemap-row {
+  display: grid;
+}
+
+.treemap-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid grey;
+  overflow: hidden;
+}
+
+.item-title {
+  margin: 0px 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.item-value {
+  margin: 4px 0px 0px 0px;
+}
