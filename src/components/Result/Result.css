@@ -14,7 +14,7 @@
 
 .treemap-item {
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -25,6 +25,10 @@
   margin: 0px 8px;
   text-align: center;
   font-size: 5px;
+}
+
+.treemap-item[min-height~="60px"] {
+  flex-direction: column;
 }
 
 .treemap-item[min-width~="40px"] > p {
