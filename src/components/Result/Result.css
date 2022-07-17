@@ -17,16 +17,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid grey;
   overflow: hidden;
+  border: 2px solid white;
 }
 
-.item-title {
+.treemap-item > p {
   margin: 0px 8px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  text-align: center;
+  font-size: 5px;
 }
 
-.item-value {
-  margin: 4px 0px 0px 0px;
+.treemap-item[min-width~="40px"] > p {
+  font-size: 12px;
+}
+
+.treemap-item[min-width~="100px"] > p {
+  font-size: 20px;
+}
+
+.treemap-item[min-width~="200px"] > p {
+  font-size: 24px;
 }

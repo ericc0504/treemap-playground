@@ -1,5 +1,6 @@
 textarea {
   resize: none;
+  box-sizing: border-box;
 }
 
 .error {
@@ -14,5 +15,13 @@ textarea {
 
 .rowNumberInput {
   width: 100%;
-  min-height: 20px;
+  min-height: 30px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .dataInput {
+    flex: 1;
+    padding-right: 0px;
+  }
 }

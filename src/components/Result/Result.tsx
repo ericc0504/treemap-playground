@@ -30,10 +30,13 @@ export const Result: FC<ResultProps> = ({ treeMapItems, rowNum }) => {
   }, [treeMap]);
 
   const generateTreeMapBlock = (treeMapItem: TreeMapItem) => {
+    const treeMapItemName = treeMapItem.name;
+    const value = `${Math.round(treeMapItem.value * 10000) / 100}%`;
     return (
       <div
         key={uuidv4()}
         className="treemap-item"
+        data-tooltip={`${treeMapItemName}: value`}
         style={{
           backgroundColor:
             treeMapItem.name === DUMMY_ITEM_NAME
@@ -43,13 +46,12 @@ export const Result: FC<ResultProps> = ({ treeMapItems, rowNum }) => {
               : "red",
         }}
       >
-        <p className="item-title">
-          {treeMapItem.name !== DUMMY_ITEM_NAME && treeMapItem.name}
-        </p>
-        <p className="item-value">
-          {treeMapItem.name !== DUMMY_ITEM_NAME &&
-            `${treeMapItem.value * 100}%`}
-        </p>
+        {treeMapItemName !== DUMMY_ITEM_NAME && (
+          <>
+            <p className="item-title">{treeMapItemName}</p>
+            <p className="item-value">{value}</p>
+          </>
+        )}
       </div>
     );
   };
@@ -66,7 +68,7 @@ export const Result: FC<ResultProps> = ({ treeMapItems, rowNum }) => {
                 className="treemap-row"
                 style={{
                   gridTemplateColumns: colTemplates[idx],
-                  height: `calc(70vh/${rowNum})`,
+                  height: `calc(70vh/${treeMap.TreeMapRows.length})`,
                 }}
               >
                 {row.treeMapItems.map((item) => {

@@ -64,6 +64,7 @@ export const constructTreeMap = (
   const rows: TreeMapRow[] = [];
 
   for (let i = 0; i < sorted.length; i++) {
+    // Create rows required
     if (rows.length < rowNum) {
       rows.push({
         treeMapItems: [sorted[i]],
@@ -71,6 +72,8 @@ export const constructTreeMap = (
       });
       continue;
     }
+
+    // Find available row to fit new item
     const targetRow = rows.find(
       // eslint-disable-next-line no-loop-func
       (row) => row.currentWeight + sorted[i].weight <= weightPerRow
@@ -79,12 +82,14 @@ export const constructTreeMap = (
       targetRow.treeMapItems.push(sorted[i]);
       targetRow.currentWeight += sorted[i].weight;
     } else {
-      console.log(rows);
+      // When all rows are full, adjust the max weight per row
       rows[0].currentWeight += sorted[i].weight;
       rows[0].treeMapItems.push(sorted[i]);
       weightPerRow = rows[0].currentWeight;
     }
   }
+
+  // Higher weight row will be displayed first
   for (let i = 0; i < rows.length; i++) {
     if (rows[i].currentWeight < weightPerRow) {
       const diff = weightPerRow - rows[i].currentWeight;
@@ -95,10 +100,9 @@ export const constructTreeMap = (
       });
     }
   }
-  console.log(`weightPerRow: ${weightPerRow}`);
-  console.log(rows);
+  const sortedRow = rows.sort((a, b) => b.currentWeight - a.currentWeight);
   return {
     weightPerRow: weightPerRow,
-    TreeMapRows: rows,
+    TreeMapRows: sortedRow,
   };
 };
