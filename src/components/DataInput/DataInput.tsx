@@ -56,11 +56,7 @@ export const DataInput: FC<DataInputProps> = ({
       return;
     }
     const value = Number(e.target.value);
-    if (Number.isNaN(value)) {
-      setRowNumError(INVALID_ROW_NUM);
-      return;
-    }
-    if (value < 1) {
+    if (Number.isNaN(value) || value < 1 || !Number.isInteger(value)) {
       setRowNumError(INVALID_ROW_NUM);
       return;
     }
