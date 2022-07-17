@@ -8,7 +8,7 @@
 .title {
   margin-top: 32px;
   margin-bottom: 8px;
-  color: white;
+  color: #fff;
 }
 
 @media (max-width: 600px) {

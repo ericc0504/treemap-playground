@@ -2,6 +2,7 @@ export interface TreeMapItem {
   name: string;
   weight: number;
   value: number;
+  isDummy?: boolean;
 }
 
 export interface TreeMapRow {

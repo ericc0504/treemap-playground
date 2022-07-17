@@ -4,8 +4,6 @@ import {
   TreeMap,
 } from "../interfaces/treeMapItem.interface";
 
-export const DUMMY_ITEM_NAME = "dummy-item";
-
 export const isJsonString = (str: string) => {
   try {
     JSON.parse(str);
@@ -94,9 +92,10 @@ export const constructTreeMap = (
     if (rows[i].currentWeight < weightPerRow) {
       const diff = weightPerRow - rows[i].currentWeight;
       rows[i].treeMapItems.push({
-        name: DUMMY_ITEM_NAME,
+        name: "",
         weight: diff,
         value: 0,
+        isDummy: true,
       });
     }
   }

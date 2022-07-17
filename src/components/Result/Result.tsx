@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo, useState } from "react";
 import { TreeMap, TreeMapItem } from "../../interfaces/treeMapItem.interface";
-import { constructTreeMap, DUMMY_ITEM_NAME } from "../../utils/util";
+import { constructTreeMap } from "../../utils/util";
 import "./Result.css";
 import { v4 as uuidv4 } from "uuid";
 
@@ -36,17 +36,15 @@ export const Result: FC<ResultProps> = ({ treeMapItems, rowNum }) => {
       <div
         key={uuidv4()}
         className="treemap-item"
-        data-tooltip={`${treeMapItemName}: value`}
         style={{
-          backgroundColor:
-            treeMapItem.name === DUMMY_ITEM_NAME
-              ? "white"
-              : treeMapItem.value > 0
-              ? "#77c66e"
-              : "#fd9193",
+          backgroundColor: treeMapItem.isDummy
+            ? "fff"
+            : treeMapItem.value > 0
+            ? "#77c66e"
+            : "#fd9193",
         }}
       >
-        {treeMapItemName !== DUMMY_ITEM_NAME && (
+        {!treeMapItem.isDummy && (
           <>
             <p className="item-title">{treeMapItemName}</p>
             <p className="item-value">{value}</p>
