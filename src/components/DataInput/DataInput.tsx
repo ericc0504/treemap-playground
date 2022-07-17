@@ -16,15 +16,9 @@ export const DataInput: FC<DataInputProps> = ({
   onTreeMapChange,
   onRowNumChange,
 }) => {
-  const [dataStr, setDataStr] = useState(`[
-    {  "name": "A", "weight": 3, "value": -0.02 },
-    {  "name": "B", "weight": 3, "value": 0.05 },
-    {  "name": "C", "weight": 6, "value": 0.015 },
-    {  "name": "D", "weight": 2, "value": -0.01 },
-    {  "name": "E", "weight": 3, "value": 0.01 }
-]`);
+  const [dataStr, setDataStr] = useState("");
   const [dataError, setDataError] = useState("");
-  const [rowNum, setRowNum] = useState("3");
+  const [rowNum, setRowNum] = useState("");
   const [rowNumError, setRowNumError] = useState("");
 
   const onDataChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
