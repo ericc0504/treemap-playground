@@ -42,8 +42,8 @@ export const Result: FC<ResultProps> = ({ treeMapItems, rowNum }) => {
             treeMapItem.name === DUMMY_ITEM_NAME
               ? "white"
               : treeMapItem.value > 0
-              ? "green"
-              : "red",
+              ? "#77c66e"
+              : "#fd9193",
         }}
       >
         {treeMapItemName !== DUMMY_ITEM_NAME && (
