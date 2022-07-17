@@ -81,7 +81,7 @@ export const DataInput: FC<DataInputProps> = ({
       <h2 className="title rowNumTitle">Row Number</h2>
       <input
         className="rowNumberInput"
-        type="text"
+        type="number"
         value={rowNum}
         onChange={onRowNumStrChange}
       ></input>
