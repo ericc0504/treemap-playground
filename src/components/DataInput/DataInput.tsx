@@ -3,9 +3,9 @@ import { TreeMapItem } from "../../interfaces/treeMapItem.interface";
 import { isJsonString, IsTreeMapItemValid } from "../../utils/util";
 import "./DataInput.css";
 
-const INVALID_DATA_STRUCTURE = "Invalid JSON";
-const INVALID_ROW_NUM = "Invalid row number";
-const INVALID_TREEMAP_ITEM = "Array contains invalid treemap item";
+export const INVALID_DATA_STRUCTURE = "Invalid JSON";
+export const INVALID_ROW_NUM = "Invalid row number";
+export const INVALID_TREEMAP_ITEM = "Array contains invalid treemap item";
 
 interface DataInputProps {
   onTreeMapChange: (treeMap: TreeMapItem[]) => void;
