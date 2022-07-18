@@ -1,6 +1,6 @@
 # Unified Height Treemap
 
-This web application help visualising treemap data which each rectangle has the same height and the item width depends on the weight of item.
+This web application help visualising treemap data which each rectangle has the same height and the rectangle width depends on the weight of item.
 
 ## Run the app
 
